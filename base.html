@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<meta charset="utf-8">
+	
+</head>
+
+<body>
+
+	<div id="wrap">
+	<h1>Alpinklubben</h1>
+	<!-- Here's all it takes to make this navigation bar. -->
+	{% if session.logget_inn %}
+		<ul id="nav">
+			<li><a href="index">Hjem</a></li>
+			<li><a href="#">Utleie</a></li>
+			<li><a href="#">Bestilling</a></li>
+			<li><a href="#">Kontakt oss</a></li>
+			<li><a href="#">Din side</a></li>
+		</ul>
+	{% else %}
+		<ul id="nav">
+			<li><a href="index">Hjem</a></li>
+			<li><a href="#">Utleie</a></li>
+			<li><a href="#">Bestilling</a></li>
+			<li><a href="#">Kontakt oss</a></li>
+			<li><a href="login">Logg inn</a></li>
+			<li><a href="registrer">Registrer deg</a></li>
+		</ul>
+	{% endif %}
+		{% block Hbody %}
+		
+		
+		{% endblock %}
+	</div>
+		
+</body>		
+	
+</html>
